@@ -38,7 +38,7 @@ function verifyToken(req, res, next) {
     const token = req.headers['token'];
 
     jwt.verify(token, process.env.ACCESS_TOKEN, (err, user) => {
-        (err) ? res.send(403) : req.user = user;
+        (err) ? res.status(403).send() : req.user = user;
         next();
     })
 }
