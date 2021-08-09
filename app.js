@@ -43,7 +43,7 @@ function verifyToken(req, res, next) {
     })
 }
 
-app.post('/grettings', verifyToken, (req, res) => {
+app.get('/grettings', verifyToken, (req, res) => {
     res.json({
         mensaje: `Buenos dias ${req.users.user}`
     })
